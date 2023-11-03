@@ -1,0 +1,13 @@
+
+{% load my_custom_tags %}
+
+{% get_menus as menus %}
+{% for menu in menus %}
+    <strong><a href="{% url 'menu_view' menu %}">{{ menu }}:</a></strong>
+    {% render_menu menu_choice=menu %}
+{% endfor %}
+
+
+
+
+

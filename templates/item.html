@@ -1,0 +1,18 @@
+{% load my_custom_tags %}
+
+    <h1>Selected Item: {{ selected_item.title }}</h1>
+
+    <ul>
+        {% for ancestor_item in ancestor_items %}
+            <li>{{ancestor_item}}</li>
+        {% endfor %}
+
+        {% for item in all_items %}
+            {% if item in selected_item_with_children %}
+                <li>{{ item.title }}</li>
+            {% endif %}
+
+        {% endfor %}
+
+    </ul>
+
